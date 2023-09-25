@@ -2,21 +2,26 @@
 //
 
 #include <iostream>
+#include <ctime>
+
+//#include "SimpleGame.h"
 #include "Game.h"
 
 int main()
 {
-    Game Simple; 
+    srand(time(NULL));
 
-    while (Simple.IsCreate())
+    Game SimpleGame;
+
+    // Game Loop
+    while (SimpleGame.Running())
     {
-      
-     }
+        SimpleGame.EventHandler();
     
-      //Window.clear(sf::Color::Yellow);
-      // Window.clear(sf::Color(100,255,255,100));
+        SimpleGame.Update();
 
-      //Window.display();
+        SimpleGame.Render();
+
     }
 }
 

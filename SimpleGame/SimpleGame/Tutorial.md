@@ -1,4 +1,7 @@
-# SFML 라이브러리 설치
+# Youtube Reference (피하기게임)
+https://www.youtube.com/watch?v=KRGPNi9mEMo&list=PL6xSOsbVA1eb_QqMTTcql_3PdOiE928up&index=2
+
+# SFML 라이브러리 설치 (아주 작고 귀여운 그래픽을 구현하는 라이브러리)
 
 ## 웹사이트
 https://www.sfml-dev.org/download/sfml/2.6.0/
@@ -21,19 +24,22 @@ https://www.sfml-dev.org/download/sfml/2.6.0/
 
 # VS(Visual Studio) 2022 환경 설정
 
-- Solution Explorer > Drop Down Menu > Properties
+- VS 2022 에디터 상단 툴바 > Solution Platform > x86으로 선택
+- Solution Explorer > SimpleGame 이름 위에서 우클릭 > Drop Down Menu > Properties
 - 상단 공통 영역
     - Configuration > All Configuration
     - Platform > Win32
 - C/C++ > General > Additional Include Directories
     - SFML에서 복사해 온 파일/폴더가 있는 위치(폴더)를 선택
-    - $(SolutionDir) : 현재 프로젝트 폴더
+    - $(SolutionDir) : 현재 프로젝트 폴더 표시 입력
+    - 최종 입력 형태 : $(SolutionDir)\External\include
  
 - Linker > General > Additional Library Directories
     - SFML에서 복사해 온 파일/폴더가 있는 위치(폴더)를 선택 
+    - 최종 입력 형태 : $(SolutionDir)\External\lib
 
 - Linker > Input > Additional Dependencies
-    - Configuraion > Release 
+    - Configuraion > Release 카테고리를 선택 > 아래 내용을 입력 후 OK 적용
   
 ```
 sfml-system.lib 
@@ -44,7 +50,7 @@ sfml-network.lib
 ```
 
 - Linker > Input > Additional Dependencies
-    - Configuraion > Debug 
+    - Configuraion > Debug 카테고리를 선택 > 아래 내용을 입력 후 OK 적용
 
 ```
 sfml-system-d.lib 
@@ -66,5 +72,16 @@ sfml-network-d.lib
 - 로딩
 
 ## Event Handling
-- Event Delegate
-- Event Listening
+- Event Delegate : 여러 개의 이벤트에 대응
+- Event Listening : 이벤트 감지
+- Event Handle : 감지된 이벤트에 대해서 적절한 동작
+
+
+# Game Loop
+
+# SimpleGame 프로젝트에 구현한 Game 클래스
+
+- 게임을 전반적으로 Control하는 클래스
+- Enemy 생성
+- Player 생성
+
